@@ -1,0 +1,268 @@
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    color: #333;
+    animation: fade-in 1s ease-in-out;
+}
+
+/* Title */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+    text-shadow: 1px 1px 2px #ffffffaa;
+}
+@keyframes fade-in {
+    from {
+        transform: translateX(-2.5%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+}
+
+@keyframes upgradeError {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+/* Vocab form */
+#add_vocab {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 500px;
+}
+
+#add_vocab input {
+    flex: 1 1 45%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-size: 1rem;
+    background-color: #fff;
+}
+
+#add_vocab button {
+    flex: 1 1 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #ff7f50;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#add_vocab button:hover {
+    background-color: #ff6347;
+}
+
+/* Timer */
+.timer {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    max-width: 300px;
+    width: 100%;
+}
+
+#timer {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.timer button {
+    margin: 0.25rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #6a5acd;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.timer button:hover {
+    background-color: #483d8b;
+}
+
+#click_box {
+    margin: 2rem 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+#coffee_btn {
+    border : none;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    padding: 3rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    width: 200%;
+    max-width: 500px;
+    font-size: large;
+}
+
+#vocab_list_display {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 500px; 
+}
+
+#vocab_list_display h2 {
+    width: 100%;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    text-align: center;
+    padding-bottom: 0.5rem;
+}
+
+#vocab_list_display ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+#vocab_list_display li {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.75rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    font-size: 1rem;
+    color: #333;
+    width: 100%;
+}
+
+#vocab_list_display li:hover {
+    background-color: #f0f8ff;
+    transform: translateY(-2px);
+    transition: all 0.2s ease;
+}
+
+#vocab_list_display button {
+    display: block;
+    margin: 1rem auto; 
+    text-align: center;
+}
+
+
+#upgrades {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    text-align: center;
+    max-width: 400px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.upgrade-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #deb887;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}
+
+.upgrade-btn:hover {
+    background-color: #d2b48c;
+}
+
+.upgrade-btn svg {
+    vertical-align: middle;
+}
+
+.upgrade-btn[data-error="true"] {
+    background-color: red;
+    animation: upgradeError 0.2s ease-in-out;
+    
+}
+
+.stats {
+   border : none;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    padding: 3rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    width: 200%;
+    max-width: 500px;
+    font-size: large;  
+}

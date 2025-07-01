@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>☕ Learn Vocab and Grow Your Coffee Business</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h1>Learn Vocab and Grow Your Coffee Business</h1>
+
+    <div id="add_vocab">
+        <input type="text" id="input_vocab" placeholder="Enter new vocab" />
+        <input type="text" id="input_meaning" placeholder="Enter meaning" />
+        <button id="btn_add">Add Vocab</button>
+    </div>
+
+    <div class="timer">
+        <span id="timer">00:00</span>
+        <button id="btn_start">Start</button>
+        <button id="btn_stop">Stop</button>
+        <button id="btn_reset">Reset</button>
+    </div>
+
+    <div id="click_box">
+        <button id="coffee_btn">Click me!</button>
+    </div>
+
+    <div id="upgrades">
+        <h2>Upgrades</h2>
+        <button class="upgrade-btn" data-upgrade="espresso" data-error="false">
+            <svg width="24" height="24" fill="brown" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10"/>
+            </svg>
+            Espresso Machine (+1 beans/click for 20 beans)
+        </button>
+    </div>
+    <div class="stats"></div>
+
+    <div id="vocab_list_display">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

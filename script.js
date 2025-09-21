@@ -9,7 +9,6 @@ const btnReset = document.getElementById("btn_reset");
 const clickerBtn = document.getElementById("coffee_btn");
 const vocabListDisplay = document.getElementById("vocab_list_display");
 
-
 // Data
 let listVocab = [];
 let listVocabTranslation = [];
@@ -18,10 +17,6 @@ let clickMultiplier = 1;
 let timer = null;
 let seconds = 0;
 let clickUpgradeCost = 20;
-
-// Load saved vocabulary and display it
-loadFromCookies();
-showList();
 
 // short form for delays
 function delay(ms) {
@@ -81,7 +76,6 @@ function showList() {
 
     vocabListDisplay.innerHTML = `
         <h2>Vocabulary List</h2>
-        <button>test</button>
         <ul>
             ${listVocab.map((word, i) => `<li>${word} – ${listVocabTranslation[i]}</li>`).join("")}
         </ul>
@@ -118,7 +112,7 @@ function updateTimerDisplay() {
 // Clicker logic
 function handleClick() {
     clickCount += clickMultiplier;
-    clickerBtn.textContent = `☕ ${clickCount}`;
+    clickerBtn.textContent = `🍪 ${clickCount}`;
 }
 
 // Upgrade logic
@@ -132,17 +126,17 @@ async function handleUpgradeClick(e) {
         if (type === "espresso") {
             clickMultiplier += 1;
             clickCount -= clickUpgradeCost;
-            clickerBtn.textContent = `☕ ${clickCount}`;
+            clickerBtn.textContent = `🍪: ${clickCount}`;
             clickUpgradeCost *= 2;
-            btn.textContent = `Espresso Machine (+1 coffee/click for ${clickUpgradeCost} coffees)`;
+            btn.textContent = `Espresso Machine (+1/click for ${clickUpgradeCost} clicks)`;
         }
     } else {
         // Not enough clicks for upgrade - show error message
         btn.textContent = "You don't have enough Beans";
         btn.dataset.error = "true";
-        await delay(800);
+        await delay(2000);
         btn.dataset.error = "false";
-        btn.textContent = `Espresso Machine (+1 coffee/click for ${clickUpgradeCost} coffees`;
+        btn.textContent = `Espresso Machine (+1/click for ${clickUpgradeCost} clicks)`;
     }
 }
 
@@ -163,3 +157,10 @@ inputMeaning.addEventListener("keypress", function(event) {
         btnAdd.click();
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    loadFromCookies();
+    showList();
+    updateTimerDisplay();
+});
+//For what are you searching? ඞ
